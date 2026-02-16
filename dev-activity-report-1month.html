@@ -65,11 +65,16 @@
     --timeline-odd: #FFFFFF;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-size-adjust: 100%;
+  }
   body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
     background: var(--bg-primary);
     color: var(--text-primary);
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
   .container { max-width: 1200px; margin: 0 auto; padding: 40px 24px; }
   .card {
@@ -80,8 +85,14 @@
     transition: border-color 0.2s;
   }
   .card:hover { border-color: var(--border); }
-  .chart-container { position: relative; width: 100%; }
-  .chart-container canvas { max-height: 350px; }
+  .chart-container { position: relative; width: 100%; min-width: 0; }
+  .chart-container canvas {
+    display: block;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    max-height: 350px;
+  }
 
   /* Stat cards */
   .stat-value { font-family: 'JetBrains Mono', monospace; font-size: 2rem; font-weight: 700; line-height: 1.1; }
@@ -170,7 +181,7 @@
   .mb-10 { margin-bottom: 40px; }
   .text-center { text-align: center; }
   .text-right { text-align: right; }
-  .overflow-x-auto { overflow-x: auto; }
+  .overflow-x-auto { overflow-x: auto; max-width: 100%; }
 
   @media (max-width: 639px) {
     .grid[style*="repeat(4"] { grid-template-columns: repeat(2, 1fr) !important; }
@@ -523,6 +534,29 @@ Chart.defaults.plugins.tooltip.borderWidth = 1;
 Chart.defaults.plugins.tooltip.cornerRadius = 8;
 Chart.defaults.plugins.tooltip.padding = 10;
 
+// Keep charts stable when DevTools full-size capture temporarily overrides viewport metrics.
+let _resizeTimer = null;
+function stabilizeChartLayout() {
+  if (_resizeTimer) clearTimeout(_resizeTimer);
+  _resizeTimer = setTimeout(() => {
+    document.querySelectorAll('.chart-container canvas').forEach((canvas) => {
+      canvas.style.width = '100%';
+      canvas.style.maxWidth = '100%';
+      canvas.style.height = 'auto';
+    });
+    document.querySelectorAll('.chart-container canvas').forEach((canvas) => {
+      const chart = Chart.getChart(canvas);
+      if (chart) chart.resize();
+    });
+  }, 120);
+}
+window.addEventListener('load', stabilizeChartLayout);
+window.addEventListener('resize', stabilizeChartLayout, { passive: true });
+window.addEventListener('focus', stabilizeChartLayout);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden) stabilizeChartLayout();
+});
+
 // ==================== 1. Daily Trend ====================
 new Chart(document.getElementById('chartDailyTrend'), {
   type: 'line',
@@ -824,15 +858,13 @@ new Chart(document.getElementById('chartKeywords'), {
 
   const repos = timeline.slice(0, 40);
   const rowH = 28;
-  const labelW = 220;
-  const chartW = 700;
-  const totalW = labelW + chartW + 60;
+  const labelW = window.innerWidth < 900 ? 140 : 220;
 
-  let html = `<div style="min-width:${totalW}px;">`;
+  let html = `<div style="width:100%; min-width:0;">`;
 
   html += `<div style="display:flex; align-items:flex-end; margin-bottom:4px;">`;
   html += `<div style="width:${labelW}px; flex-shrink:0;"></div>`;
-  html += `<div style="flex:1; position:relative; height:20px;">`;
+  html += `<div style="flex:1; min-width:0; position:relative; height:20px;">`;
   for (let d = 0; d <= totalDays; d += 7) {
     const pct = (d / totalDays * 100).toFixed(1);
     const lbl = d < dateLabels.length ? dateLabels[d] : '';
@@ -851,7 +883,7 @@ new Chart(document.getElementById('chartKeywords'), {
     html += `<span style="font-size:11px; color:${TEXT_PRIMARY}; font-weight:500;">${r.repo}</span>`;
     html += `<span style="font-size:10px; color:${TEXT_MUTED}; margin-left:6px;">${r.commits}c</span>`;
     html += `</div>`;
-    html += `<div style="flex:1; position:relative; height:16px;">`;
+    html += `<div style="flex:1; min-width:0; position:relative; height:16px;">`;
     html += `<div style="position:absolute; left:${startPct}%; width:${widthPct}%; height:100%; background:${color}; border-radius:3px; opacity:0.85;" title="${r.repo}: ${r.first} — ${r.last} (${r.commits} commits, ${r.active_days} active days)"></div>`;
     html += `</div></div>`;
   });
