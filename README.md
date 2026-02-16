@@ -27,6 +27,14 @@
   <a href="https://merozemory.github.io/MeroZemory/dev-activity-report-1month.html">Open on Pages</a>
 </p>
 
+<div align="center">
+  <a href="./dev-activity-report-capture-full.png">
+    <img src="./dev-activity-report-capture-preview.png" alt="Dev activity report capture preview" width="900" />
+  </a>
+  <br/>
+  <sub>Click image to open full-size capture.</sub>
+</div>
+
 <hr/>
 
 <div align="center">
