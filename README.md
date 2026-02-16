@@ -28,12 +28,21 @@
 </p>
 
 <div align="center">
+  <h3>Report Preview (on Profile)</h3>
   <a href="./dev-activity-report-capture-full.png">
     <img src="./dev-activity-report-capture-preview.png" alt="Dev activity report capture preview" width="900" />
   </a>
   <br/>
   <sub>Click image to open full-size capture.</sub>
 </div>
+
+<details>
+  <summary><strong>Show full capture inline</strong></summary>
+  <br/>
+  <div align="center">
+    <img src="./dev-activity-report-capture-full.png" alt="Dev activity report full capture" width="900" />
+  </div>
+</details>
 
 <hr/>
 
