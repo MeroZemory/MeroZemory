@@ -1,26 +1,31 @@
 <div align="center">
-  <h1>Hi, I'm MeroZemory</h1>
-  <p>
-    <strong>Build. Reverse. Ship.</strong><br/>
-    I work across AI tooling, reverse engineering, and product engineering.
-  </p>
+  <img src="https://github.com/MeroZemory.png" width="120" alt="MeroZemory avatar" />
+  <h1>MeroZemory</h1>
+  <p><strong>Build. Reverse. Ship.</strong></p>
 </div>
 
 <div align="center">
-  <a href="https://github.com/MeroZemory?tab=repositories">
-    <img alt="Repos" src="https://img.shields.io/badge/Repositories-View-0A66C2?style=for-the-badge">
+  <a href="https://github.com/MeroZemory?tab=followers">
+    <img alt="Followers" src="https://img.shields.io/github/followers/MeroZemory?label=Followers&style=for-the-badge" />
   </a>
-  <a href="https://github.com/MeroZemory?tab=stars">
-    <img alt="Stars" src="https://img.shields.io/badge/Stars-Check-1F883D?style=for-the-badge">
+  <a href="https://github.com/MeroZemory?tab=repositories">
+    <img alt="Public Repos" src="https://img.shields.io/badge/Repositories-View-0A66C2?style=for-the-badge" />
   </a>
 </div>
 
 <br/>
 
 <div align="center">
-  <img height="165" src="https://github-readme-stats.vercel.app/api?username=MeroZemory&show_icons=true&hide_border=true" alt="GitHub stats" />
-  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=MeroZemory&layout=compact&hide_border=true" alt="Top languages" />
+  <a href="https://github.com/MeroZemory/MeroZemory/blob/main/dev-activity-report-1month.html">
+    <img alt="Monthly Dev Activity Report" src="https://img.shields.io/badge/Dev%20Activity%20Report-Open%20HTML-1F883D?style=for-the-badge" />
+  </a>
 </div>
+
+<p align="center">
+  <a href="https://github.com/MeroZemory/MeroZemory/blob/main/dev-activity-report-1month.html">View report on GitHub</a>
+  |
+  <a href="https://raw.githubusercontent.com/MeroZemory/MeroZemory/main/dev-activity-report-1month.html">Download raw HTML</a>
+</p>
 
 <hr/>
 
