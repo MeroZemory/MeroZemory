@@ -16,15 +16,15 @@
 <br/>
 
 <div align="center">
-  <a href="https://github.com/MeroZemory/MeroZemory/blob/main/dev-activity-report-1month.html">
+  <a href="https://merozemory.github.io/MeroZemory/dev-activity-report-1month.html">
     <img alt="Monthly Dev Activity Report" src="https://img.shields.io/badge/Dev%20Activity%20Report-Open%20HTML-1F883D?style=for-the-badge" />
   </a>
 </div>
 
 <p align="center">
-  <a href="https://github.com/MeroZemory/MeroZemory/blob/main/dev-activity-report-1month.html">View report on GitHub</a>
+  <a href="https://merozemory.github.io/MeroZemory/dev-activity-report-1month.html">Open report</a>
   |
-  <a href="https://raw.githubusercontent.com/MeroZemory/MeroZemory/main/dev-activity-report-1month.html">Download raw HTML</a>
+  <a href="https://merozemory.github.io/MeroZemory/dev-activity-report-1month.html">Open on Pages</a>
 </p>
 
 <hr/>
