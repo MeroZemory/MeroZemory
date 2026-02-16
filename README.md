@@ -48,24 +48,18 @@
 
 <div align="center">
   <h3>TALOS Portfolio Highlights</h3>
-  <p>
-    Tactical Anti-missile Launch Operations Simulator (TALOS) snapshots
-  </p>
-</div>
-
-<div align="center">
-  <img src="./talos/talos-hero-globe-dashboard.png" alt="TALOS hero globe dashboard" width="900" />
-</div>
-
-<div align="center">
-  <img src="./talos/talos-engagement-3d-hud.png" alt="TALOS engagement 3D HUD" width="900" />
-</div>
-
-<div align="center">
-  <img src="./talos/talos-kpi-dashboard-full.png" alt="TALOS KPI dashboard" width="900" />
+  <p>Tactical Anti-missile Launch Operations Simulator (TALOS)</p>
 </div>
 
 <p align="center">
+  Replace these files with your own captures:
+  <br/>
+  <code>talos/talos-hero-globe-dashboard.png</code>
+  <br/>
+  <code>talos/talos-engagement-3d-hud.png</code>
+  <br/>
+  <code>talos/talos-kpi-dashboard-full.png</code>
+  <br/>
   <a href="./talos/SHOTLIST.md">TALOS capture shotlist</a>
 </p>
 
